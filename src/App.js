@@ -6,7 +6,7 @@ import parse from "html-react-parser";
 import { formatSeasons } from "./utils/formatSeasons";
 
 import Episodes from "./components/Episodes";
-import fetchShow from './api/fetchShow';
+import {fetchShow} from './api/fetchShow';
 import "./styles.css";
 
 export default function App() {
@@ -21,7 +21,6 @@ export default function App() {
         setShow(res.data);
         setSeasons(formatSeasons(res.data._embedded.episodes));
       });
-    fetchShow();
   }, []);
 
   const handleSelect = e => {
